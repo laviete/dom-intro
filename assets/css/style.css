@@ -1,0 +1,33 @@
+.sliderWrapper {
+  width: 600px;
+  height: 250px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.sliderWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  font-size: larger;
+  border-radius: 50%;
+  border: none;
+  opacity: 50%;
+  transition: opacity 0.5s;
+}
+.navBtn:hover {
+  opacity: 70%;
+}
+.prevBtn {
+  left: 15px;
+}
+.nextBtn {
+  right: 15px;
+}

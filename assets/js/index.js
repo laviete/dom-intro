@@ -1,39 +1,43 @@
-// Task: При натисканні на кнопку:
+const slides = [
+  {
+    src: "https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "landscape1",
+  },
+  {
+    src: "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "landscape2",
+  },
+  {
+    src: "https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "landscape3",
+  },
+  {
+    src: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "landscape4",
+  },
+];
+let currentSlideIndex = 0;
+const slideImg = document.querySelector("img");
+updateSlideImage(currentSlideIndex);
 
-// Отримати заголовок першого рівня
-//   і встановити для нього інший колір тла.
-// * Виставити для заголовків другого рівня розмір шрифта 20px і їх колір.
-
-// Встановити src i alt, розміри для головного зображення.
-// * Встановити src i alt, розміри для зображень в кожному атіклі.
-
-const btn = document.querySelector("button");
-
-function clickHandler(e) {
-  const h1 = document.querySelector("h1");
-  h1.setAttribute("style", "background-color:orange;");
-  //h1.style.backgroundColor = 'yellow';
-  const h2s = document.querySelectorAll("h2");
-  h2s.forEach((h2) => {
-    h2.style.fontSize = "20px";
-    h2.style.color = "green";
-    //h2.setAttribute("style", "font-size:20px; color:green;");
-  });
-
-  const mainImg = document.querySelector(".mainImg");
-  mainImg.src =
-    "https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782_640.jpg";
-  mainImg.alt = "cat";
-  mainImg.width = 400;
-  mainImg.height = 300;
-
-  const sectionImgs = document.querySelectorAll(".sectionImage");
-  sectionImgs.forEach((img) => {
-    img.src =
-      "https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782_640.jpg";
-    img.alt = "cat";
-    img.width = 300;
-    img.height = 200;
-  });
+const [prevBtn, nextBtn] = document.querySelectorAll(".navBtn");
+function nextSlideHandler(params) {
+  //if(currentSlideIndex < slides.length -1){
+  //    currentSlideIndex++
+  //}
+  //else{
+  //    currentSlideIndex=0;
+  //}
+  currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+  updateSlideImage(currentSlideIndex);
 }
-btn.addEventListener("click", clickHandler);
+function prevSlideHandler(params) {
+  currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+  updateSlideImage(currentSlideIndex);
+}
+nextBtn.addEventListener("click", nextSlideHandler);
+prevBtn.addEventListener("click", prevSlideHandler);
+function updateSlideImage(currentSlideIndex) {
+  slideImg.src = slides[currentSlideIndex].src;
+  slideImg.alt = slides[currentSlideIndex].alt;
+}
