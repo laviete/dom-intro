@@ -22,12 +22,12 @@ updateSlideImage(currentSlideIndex);
 
 const [prevBtn, nextBtn] = document.querySelectorAll(".navBtn");
 function nextSlideHandler(params) {
-  //if(currentSlideIndex < slides.length -1){
-  //    currentSlideIndex++
-  //}
-  //else{
-  //    currentSlideIndex=0;
-  //}
+  /* if(currentSlideIndex < slides.length -1){
+      currentSlideIndex++
+  }
+  else{
+      currentSlideIndex=0;
+  } */
   currentSlideIndex = (currentSlideIndex + 1) % slides.length;
   updateSlideImage(currentSlideIndex);
 }
@@ -41,3 +41,15 @@ function updateSlideImage(currentSlideIndex) {
   slideImg.src = slides[currentSlideIndex].src;
   slideImg.alt = slides[currentSlideIndex].alt;
 }
+
+//--------------------hw-----------------------------
+/* slideImg.addEventListener("mouseover", nextSlideHandler);
+const changeTextBtn = document.querySelector(".changeTextBtn");
+changeTextBtn.addEventListener("click", () => {
+  changeTextBtn.textContent = "changes applied";
+});
+const changeColorBtn = document.querySelector(".changeColorBtn");
+changeColorBtn.addEventListener("click", () => {
+  changeColorBtn.setAttribute('style', 'color:#E4E8F4; background-color:#8FA2CA;');
+});
+ */

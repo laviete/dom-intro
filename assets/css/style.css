@@ -3,6 +3,7 @@
   height: 250px;
   margin: 100px auto;
   position: relative;
+  text-align: center;
 }
 
 .sliderWrapper > img {
@@ -23,11 +24,24 @@
   transition: opacity 0.5s;
 }
 .navBtn:hover {
-  opacity: 70%;
+  opacity: 75%;
 }
 .prevBtn {
   left: 15px;
 }
 .nextBtn {
   right: 15px;
+}
+.prevImg,
+.nextImg{
+  
+}
+.btn {
+  margin: 0 auto;
+  font-size: 15px;
+  padding: 9px 13px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 10px 1px rgba(9, 23, 128, 0.361);
 }
