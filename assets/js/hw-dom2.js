@@ -88,6 +88,7 @@ function createNewsContent({ category, body, date }) {
   newsContentElem.append(newsCategoryElem, newsParagraphElem, newsDateElem);
   return newsContentElem;
 }
+
 function createActionIconsSection() {
   const actionIconsElem = document.createElement("section");
   actionIconsElem.classList.add("actionIcons");
@@ -96,6 +97,7 @@ function createActionIconsSection() {
   actionIconsElem.append(trashIcon, likeIcon);
   return actionIconsElem;
 }
+
 function createTrashIcon() {
   const trashIcon = document.createElement("i");
   trashIcon.classList.add("trashIcon");
